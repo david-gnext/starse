@@ -15,17 +15,17 @@ $hideslide = get_theme_mod('hide_slides', 1);
 $hide_pagethreeboxes = get_theme_mod('hide_pagethreeboxes', 1);
 $secwithcontent = get_theme_mod('hide_home_secwith_content', 1);
 
-if (!is_home() && is_front_page()) { 
+if (!is_home() && is_front_page()) {
 if( $hideslide == '') { ?>
 <!-- Slider Section -->
-<?php 
+<?php
 $pages = array();
-for($sld=7; $sld<10; $sld++) { 
+for($sld=7; $sld<10; $sld++) {
 	$mod = absint( get_theme_mod('page-setting'.$sld));
     if ( 'page-none-selected' != $mod ) {
       $pages[] = $mod;
-    }	
-} 
+    }
+}
 if( !empty($pages) ) :
 $args = array(
       'posts_per_page' => 3,
@@ -34,7 +34,7 @@ $args = array(
       'orderby' => 'post__in'
     );
     $query = new WP_Query( $args );
-    if ( $query->have_posts() ) :	
+    if ( $query->have_posts() ) :
 	$sld = 7;
 ?>
 <section id="home_slider">
@@ -72,63 +72,63 @@ $args = array(
     </div>
  	<?php $k++;
        wp_reset_postdata();
-      } 
+      }
 	  endif; endif; ?>
   </div>
   <div class="clear"></div>
 </section>
-<?php } }  
-	if(!is_home() && is_front_page()){ 
+<?php } }
+	if(!is_home() && is_front_page()){
 	if( $secwithcontent == '') {
 ?>
  <section id="sec1section">
  	<div class="container">
     <div class="home_section2_content">
-            <div class="columns-row"> 
-            <?php if( get_theme_mod('sec-column1', false)) { 
+            <div class="columns-row">
+            <?php if( get_theme_mod('sec-column1', false)) {
 				  $seccolbox = new WP_query('page_id='.get_theme_mod('sec-column1',true));
-				  while( $seccolbox->have_posts() ) : $seccolbox->the_post(); ?>            
-			<div class="col-columns-2"> 
-            <div class="fancy-title"><h2><?php the_title(); ?></h2></div> 
+				  while( $seccolbox->have_posts() ) : $seccolbox->the_post(); ?>
+			<div class="col-columns-2">
+            <div class="fancy-title"><h2><?php the_title(); ?></h2></div>
             <div class="fancy-desc"><?php the_content(); ?></div>
-	        <?php endwhile; } ?>       
-            </div>  	
+	        <?php endwhile; } ?>
+            </div>
             <?php if( has_post_thumbnail() ) { ?>
-			<div class="col-columns-thumb"><?php the_post_thumbnail('full'); ?></div> 
-            <?php } ?>           
+			<div class="col-columns-thumb"><?php the_post_thumbnail('full'); ?></div>
+            <?php } ?>
             <div class="clear"></div></div>
             </div>
     </div>
  </section>
-<?php }} 
-if (!is_home() && is_front_page()) { 
+<?php }}
+if (!is_home() && is_front_page()) {
 if( $hide_pagethreeboxes == '') { ?>
 <section id="pagearea">
-	  <div class="container"> 	
-      <?php for($p=1; $p<4; $p++) { 
+	  <div class="container">
+      <?php for($p=1; $p<4; $p++) {
 	  		if( get_theme_mod('page-column'.$p,false)) {
-			$querypagethreeboxes = new WP_query('page_id='.get_theme_mod('page-column'.$p,true)); 
+			$querypagethreeboxes = new WP_query('page_id='.get_theme_mod('page-column'.$p,true));
 			while( $querypagethreeboxes->have_posts() ) : $querypagethreeboxes->the_post(); ?>
     <div class="featured-box <?php echo esc_attr('bxbg'.$p); ?>">
   	<div class="featured-box-inner"><?php if( has_post_thumbnail() ) {?><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_post_thumbnail('full', array(
 'class' => 'featured-box-image'
 )); ?></a>
-<?php } ?>  
+<?php } ?>
     <h4 class="featured-box-title"><?php the_title(); ?></h4>
     <div class="featured-box-text"><?php the_excerpt(); ?></div>
     <a class="featured-box-button" href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e('Read More', 'decor-lite');?></a> </div>
 </div>
       <?php endwhile;
-       wp_reset_postdata(); 
+       wp_reset_postdata();
 	   }} ?>
-      <div class="clear"></div> 
+      <div class="clear"></div>
       </div>
 </section><!-- #pagearea -->
 <div class="clear"></div>
 <?php } } ?>
 <div class="container">
      <div class="page_content">
-      <?php 
+      <?php
 	if ( 'posts' == get_option( 'show_on_front' ) ) {
     ?>
     <section class="site-main">
@@ -156,7 +156,7 @@ if( $hide_pagethreeboxes == '') { ?>
                     endif;
                     ?>
       </div>
-      <!-- blog-post --> 
+      <!-- blog-post -->
     </section>
     <?php
 } else {
@@ -173,7 +173,7 @@ if( $hide_pagethreeboxes == '') { ?>
                              * (where ___ is the post format) and that will be used instead.
                              */
 							 ?>
-                             <header class="entry-header">           
+                             <header class="entry-header">
             				<h1><?php the_title(); ?></h1>
                     		</header>
                              <?php
@@ -191,7 +191,7 @@ if( $hide_pagethreeboxes == '') { ?>
                     endif;
                     ?>
       </div>
-      <!-- blog-post --> 
+      <!-- blog-post -->
     </section>
 	<?php
 }

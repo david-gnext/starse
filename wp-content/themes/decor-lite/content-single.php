@@ -9,8 +9,8 @@
     </header><!-- .entry-header -->
      <div class="postmeta">
             <div class="post-date"><?php the_date(); ?></div><!-- post-date -->
-            <div class="post-comment"> &nbsp;|&nbsp; <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div> 
-            <div class="clear"></div>         
+            <div class="post-comment"> &nbsp;|&nbsp; <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div>
+            <div class="clear"></div>
     </div><!-- postmeta -->
 	<?php if (has_post_thumbnail() ){ ?>
     	<div class="post-thumb"><?php the_post_thumbnail(); ?></div>
@@ -26,8 +26,8 @@
 				'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'decor-lite' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
-		?>     
-        <div class="postmeta">           
+		?>
+        <div class="postmeta">
             <div class="post-tags"><?php the_tags(); ?> </div>
             <div class="clear"></div>
         </div><!-- postmeta -->
