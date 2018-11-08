@@ -293,7 +293,7 @@ th, td {
 }
 
 .entry-content ol li, .entry-content ul li {
-  margin-left: 15px;
+  /* margin-left: 15px; */
 }
 
 ul li ul, ul li ul li ul, ol li ol, ol li ol li ol {
@@ -682,6 +682,37 @@ ol.comment-list li {
   margin: 0 auto;
 }
 
+.qa-list {
+  list-style-type: none;
+  margin: 0;
+  width: 100%;
+}
+
+.qa-list li {
+  padding: 10px;
+}
+
+.qa-list li:nth-child(odd) {
+  background: #e9e9e9;
+}
+
+.qa-title {
+  font-size: 1.2rem;
+  color: #030303;
+  position: relative;
+}
+
+.qa-ans {
+  margin: 10px 0;
+  color: #9a9a9a;
+}
+
+.arrow {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  width: 20px;
+}
 .sitenav {
   padding:0;
   float: left;
@@ -696,7 +727,7 @@ ol.comment-list li {
   margin: 0 auto;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   width: 65%;
 }
 
@@ -709,7 +740,7 @@ ol.comment-list li {
 }
 
 .sitenav ul li a {
-  padding: 20px 15px;
+  padding: 20px 14px;
   display: block;
   color: #ffffff;
   text-transform:uppercase;
@@ -1042,10 +1073,33 @@ a.ReadMore:hover {
 /* = Page lay out css
 -------------------------------------------------------------- */
 .site-main {
-  width: 790px;
+  width: 70%;
   margin: 0;
   padding: 0;
   float: left;
+}
+
+.home-content {
+  display: inline-flex;
+  width: 95%;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+.px-1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+/*
+Grid Column
+*/
+
+.col-3 {
+  width: 30%;
+}
+.col-7 {
+  width: 70%;
 }
 
 #sitefull {
@@ -1055,6 +1109,11 @@ a.ReadMore:hover {
 
 #sitefull p {
   margin-bottom: 15px;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
 }
 
 .page_content {

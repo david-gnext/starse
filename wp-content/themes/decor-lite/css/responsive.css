@@ -10,6 +10,10 @@
   text-align: center;
 }
 
+.home-content {
+  width: 100%;
+}
+
 .center {
   width: auto;
 }
@@ -529,11 +533,30 @@ input.search-field, .post-password-form input[type="password"] {
 .post-thumb {
   height: auto;
 }
+
+#left_content,.site-main {
+  width: 60%;
+  display: inline-block;
+}
+
+#sidebar {
+  width: 40%;
+  display: inline-block;
+}
 }
 
 @media screen and (max-width:1169px) and (min-width:981px) {
 html {
   overflow-x: hidden;
+}
+
+#left_content,.site-main {
+  width: 60%;
+  display: inline-block;
+}
+#sidebar {
+  width: 40%;
+  display: inline-block;
 }
 
 .logo {
@@ -712,3 +735,16 @@ input.search-field, .post-password-form input[type="password"] {
 }
 
 }
+
+@media screen
+  and (min-width: 1200px)
+  and (max-width: 1600px) {
+    #left_content {
+      width: 70%;
+      display: inline-block;
+    }
+    #sidebar {
+      width: 30%;
+      display: inline-block;
+    }
+})

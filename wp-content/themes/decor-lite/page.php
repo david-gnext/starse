@@ -12,7 +12,7 @@
 get_header(); ?>
 <div class="container">
       <div class="page_content">
-    		 <section class="site-main">               
+    		 <section class="site-main">
             		<?php if( have_posts() ) :
 							while( have_posts() ) : the_post(); ?>
                             	<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -27,7 +27,7 @@ get_header(); ?>
                                             'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'decor-lite' ) . ' </span>%',
                                             'separator'   => '<span class="screen-reader-text">, </span>',
                                         ) );
-                                    ?> 
+                                    ?>
                                             <?php
 												//If comments are open or we have at least one comment, load up the comment template
 												if ( comments_open() || '0' != get_comments_number() )
@@ -36,8 +36,8 @@ get_header(); ?>
                                 </div><!-- entry-content -->
                       		<?php endwhile; else : endif; ?>
             </section><!-- section-->
-     <?php get_sidebar();?>      
+     <?php get_sidebar();?>
     <div class="clear"></div>
-    </div><!-- .page_content --> 
- </div><!-- .container --> 
+    </div><!-- .page_content -->
+ </div><!-- .container -->
 <?php get_footer(); ?>
